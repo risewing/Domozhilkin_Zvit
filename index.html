@@ -73,31 +73,30 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            width: 100px; /* Ширина фотографії */
-            height: 100px; /* Висота фотографії */
-            border-radius: 10%; /* Закруглення країв для форми кола */
+            width: 100px;
+            height: 100px;
+            border-radius: 10%;
             overflow: hidden;
         }
         .photo img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Забезпечує, щоб зображення повністю заповнювало круглу область */
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Фотографія в правому верхньому куті -->
         <div class="photo">
             <img src="./images/photo_2022-05-09_13-34-09.jpg" alt="Фотографія">
         </div>
 
         <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
-        <h2>З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"<br>Студентки групи ІС-33 Доможилкіна Олега Сергійовича</h2>
+        <h2>З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"<br>Студента групи ІС-33 Доможилкіна Олега Сергійовича</h2>
 
         <div class="nav-buttons">
-            <button onclick="goToLab1()">Лабораторна робота №1</button>
-            <button>Лабораторна робота №2</button>
+            <button onclick="showLab1()">Лабораторна робота №1</button>
+            <button onclick="showLab2()">Лабораторна робота №2</button>
             <button>Лабораторна робота №3</button>
             <button>Лабораторна робота №4</button>
             <button>Лабораторна робота №5</button>
@@ -108,13 +107,15 @@
         </div>
 
         <div class="content">
-            <div class="menu">
+            <div class="menu" id="menu">
+                <!-- Початкове меню для ЛР №1 -->
                 <button onclick="toggleDescription()">Опис предметного середовища</button>
                 <button onclick="showTopicDetails()">Тема Мета Місце розташування ЛР №1</button>
                 <button onclick="showTableCode()">HTML-код таблиць</button>
                 <button onclick="showListCode()">HTML-код списку</button>
                 <button onclick="showImage()">HTML-код зображення</button>
                 <button onclick="showConclusion()">Висновки</button>
+                
             </div>
             <div class="output" id="output">
                 <p>Місце виведення інформації</p>
@@ -122,121 +123,190 @@
         </div>
     </div>
     <script>
+        // Показати меню для ЛР №1
+        function showLab1() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="toggleDescription()">Опис предметного середовища</button>
+                <button onclick="showTopicDetails()">Тема Мета Місце розташування ЛР №1</button>
+                <button onclick="showTableCode()">HTML-код таблиць</button>
+                <button onclick="showListCode()">HTML-код списку</button>
+                <button onclick="showImage()">HTML-код зображення</button>
+                <button onclick="showConclusion()">Висновки</button>
+            `;
+        }
+
+        // Показати меню для ЛР №2
+        function showLab2() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="showDetails()">Тема, мета ЛР №2 Місце розташування сайту, звіту</button>
+                <button>Способи підключення стилів</button>
+                <button>СЕЛЕКТОРИ</button>
+                <button onclick="showTagSelector()">Селектори тегу</button>
+                <button onclick="showClassSelector()">Селектори класу</button>
+                <button onclick = "showIDSelector()">Селектори ідентифікаторів</button>
+                <button onclick = "showOtherSelector()">Інші селектори</button>
+                <button onclick = "showCSS()">CSS: Шрифти, текст, таблиці, фон, контур</button>
+                <button onclick = "showConclusion2()">ВИСНОВКИ до ЛР №2</button>
+            `;
+        }
+
         function toggleDescription() {
-    var outputDiv = document.getElementById("output");
-    var currentContent = outputDiv.innerHTML.trim();
-    var description = `
-        <p><strong>Опис предметного середовища проєкту</strong></p>
-        <p><strong>Тема:</strong><br>
-        Сайт присвячений подорожам до Японії. Він пропонує інформацію про туристичні маршрути, визначні місця, місцеву культуру, традиції, їжу, а також розрахунок бюджету подорожі. Сайт спрямований на аудиторію, яка планує або цікавиться поїздками до Японії, надаючи їй всю необхідну інформацію для організації подорожі.</p>
+            var outputDiv = document.getElementById("output");
+            var currentContent = outputDiv.innerHTML.trim();
+            var description = `
+                <p><strong>Опис предметного середовища проєкту</strong></p> 
 
-        <p><strong>Мета:</strong><br>
-        Основна мета сайту – надати корисну та детальну інформацію про подорожі до Японії. Це включає:</p>
-        <ul>
-            <li>Ознайомлення користувачів з культурними особливостями країни.</li>
-            <li>Рекомендації щодо туристичних маршрутів та визначних місць.</li>
-            <li>Надання інформації про вартість подорожі за допомогою калькулятора бюджету.</li>
-            <li>Інформування про місцеву кухню, звичаї, культурні події та інші цікавинки.</li>
-            <li>Залучення користувачів до взаємодії через соціальні мережі та канали зв'язку.</li>
-        </ul>
+        <p><strong>Тема:</strong><br> 
 
-        <p><strong>Опис бізнес-логіки:</strong></p>
-        <ul>
-            <li><strong>Навігація:</strong> Сайт має зручну навігацію, що дозволяє користувачам легко знайти потрібну інформацію. Головне меню включає розділи: Природа, Їжа, Розваги, Культура, Маршрути.</li>
-            <li><strong>Головна сторінка:</strong> Відображає найпопулярніші статті та функції сайту, такі як калькулятор бюджету, статті про маршрути, відповіді на поширені питання.</li>
-            <li><strong>Калькулятор бюджету:</strong> Інтерактивний інструмент, який дозволяє користувачам розрахувати приблизну вартість подорожі, враховуючи переліт, проживання, харчування, екскурсії та інші витрати.</li>
-            <li><strong>Категорії контенту:</strong>
-                <ul>
-                    <li><strong>Природа:</strong> Інформація про національні парки, природні визначні місця.</li>
-                    <li><strong>Їжа:</strong> Опис традиційних японських страв, ресторанів, кафе.</li>
-                    <li><strong>Розваги:</strong> Рекомендації щодо відвідування тематичних парків, фестивалів, нічного життя.</li>
-                    <li><strong>Культура:</strong> Статті про культурні події, звичаї, традиції Японії.</li>
-                    <li><strong>Маршрути:</strong> Готові маршрути для подорожей по країні з описом основних точок інтересу.</li>
-                </ul>
-            </li>
-            <li><strong>Система комунікації:</strong> Контактна форма та посилання на соціальні мережі для зворотного зв'язку, підписки та обговорень.</li>
-        </ul>
+        Сайт присвячений подорожам до Японії. Він пропонує інформацію про туристичні маршрути, визначні місця, місцеву культуру, традиції, їжу, а також розрахунок бюджету подорожі. Сайт спрямований на аудиторію, яка планує або цікавиться поїздками до Японії, надаючи їй всю необхідну інформацію для організації подорожі.</p> 
 
-        <p><strong>Сценарій:</strong></p>
-        <p><strong>Сценарій 1: Ознайомлення з сайтом</strong></p>
-        <ol>
-            <li>Користувач заходить на сайт і переглядає головну сторінку.</li>
-            <li>Вибирає один із розділів меню, наприклад, "Природа".</li>
-            <li>Читає статті про національні парки та визначні місця, планує відвідування.</li>
-        </ol>
+ 
 
-        <p><strong>Сценарій 2: Планування подорожі</strong></p>
-        <ol>
-            <li>Користувач заходить на сайт з метою розрахувати бюджет подорожі.</li>
-            <li>Використовує калькулятор бюджету, вводить параметри (кількість днів, місто, вид транспорту).</li>
-            <li>Отримує приблизну вартість поїздки і зберігає інформацію для подальшого використання.</li>
-        </ol>
+        <p><strong>Мета:</strong><br> 
 
-        <p><strong>Сценарій 3: Пошук відповіді на питання</strong></p>
-        <ol>
-            <li>Користувач має конкретне питання щодо поїздки (наприклад, як замовити квитки на поїзд).</li>
-            <li>Переходить до розділу "Відповіді на питання про Японію".</li>
-            <li>Знаходить потрібну інформацію, переглядає рекомендації.</li>
-        </ol>
+        Основна мета сайту – надати корисну та детальну інформацію про подорожі до Японії. Це включає:</p> 
 
-        <p><strong>Сценарій 4: Підписка на оновлення</strong></p>
-        <ol>
-            <li>Користувач цікавиться новинами про Японію.</li>
-            <li>Переглядає контакти, натискає на посилання на Telegram-канал.</li>
-            <li>Підписується на канал для отримання новин та оновлень.</li>
-        </ol>
-    `;
+        <ul> 
 
-   
+            <li>Ознайомлення користувачів з культурними особливостями країни.</li> 
 
+            <li>Рекомендації щодо туристичних маршрутів та визначних місць.</li> 
 
-            
+            <li>Надання інформації про вартість подорожі за допомогою калькулятора бюджету.</li> 
 
+            <li>Інформування про місцеву кухню, звичаї, культурні події та інші цікавинки.</li> 
+
+            <li>Залучення користувачів до взаємодії через соціальні мережі та канали зв'язку.</li> 
+
+        </ul> 
+
+ 
+
+        <p><strong>Опис бізнес-логіки:</strong></p> 
+
+        <ul> 
+
+            <li><strong>Навігація:</strong> Сайт має зручну навігацію, що дозволяє користувачам легко знайти потрібну інформацію. Головне меню включає розділи: Природа, Їжа, Розваги, Культура, Маршрути.</li> 
+
+            <li><strong>Головна сторінка:</strong> Відображає найпопулярніші статті та функції сайту, такі як калькулятор бюджету, статті про маршрути, відповіді на поширені питання.</li> 
+
+            <li><strong>Калькулятор бюджету:</strong> Інтерактивний інструмент, який дозволяє користувачам розрахувати приблизну вартість подорожі, враховуючи переліт, проживання, харчування, екскурсії та інші витрати.</li> 
+
+            <li><strong>Категорії контенту:</strong> 
+
+                <ul> 
+
+                    <li><strong>Природа:</strong> Інформація про національні парки, природні визначні місця.</li> 
+
+                    <li><strong>Їжа:</strong> Опис традиційних японських страв, ресторанів, кафе.</li> 
+
+                    <li><strong>Розваги:</strong> Рекомендації щодо відвідування тематичних парків, фестивалів, нічного життя.</li> 
+
+                    <li><strong>Культура:</strong> Статті про культурні події, звичаї, традиції Японії.</li> 
+
+                    <li><strong>Маршрути:</strong> Готові маршрути для подорожей по країні з описом основних точок інтересу.</li> 
+
+                </ul> 
+
+            </li> 
+            <li><strong>Система комунікації:</strong> Контактна форма та посилання на соціальні мережі для зворотного зв'язку, підписки та обговорень.</li> 
+
+        </ul> 
+
+ 
+
+        <p><strong>Сценарій:</strong></p> 
+
+        <p><strong>Сценарій 1: Ознайомлення з сайтом</strong></p> 
+
+        <ol> 
+
+            <li>Користувач заходить на сайт і переглядає головну сторінку.</li> 
+
+            <li>Вибирає один із розділів меню, наприклад, "Природа".</li> 
+
+            <li>Читає статті про національні парки та визначні місця, планує відвідування.</li> 
+
+        </ol> 
+
+ 
+
+        <p><strong>Сценарій 2: Планування подорожі</strong></p> 
+
+        <ol> 
+
+            <li>Користувач заходить на сайт з метою розрахувати бюджет подорожі.</li> 
+
+            <li>Використовує калькулятор бюджету, вводить параметри (кількість днів, місто, вид транспорту).</li> 
+
+            <li>Отримує приблизну вартість поїздки і зберігає інформацію для подальшого використання.</li> 
+
+        </ol> 
+
+ 
+
+        <p><strong>Сценарій 3: Пошук відповіді на питання</strong></p> 
+
+        <ol> 
+
+            <li>Користувач має конкретне питання щодо поїздки (наприклад, як замовити квитки на поїзд).</li> 
+
+            <li>Переходить до розділу "Відповіді на питання про Японію".</li> 
+
+            <li>Знаходить потрібну інформацію, переглядає рекомендації.</li> 
+
+        </ol> 
+
+ 
+
+        <p><strong>Сценарій 4: Підписка на оновлення</strong></p> 
+
+        <ol> 
+
+            <li>Користувач цікавиться новинами про Японію.</li> 
+
+            <li>Переглядає контакти, натискає на посилання на Telegram-канал.</li> 
+
+            <li>Підписується на канал для отримання новин та оновлень.</li> 
+
+        </ol> 
+            `;
             if (currentContent === '<p>Місце виведення інформації</p>' || currentContent === '') {
                 outputDiv.innerHTML = description;
             } else {
                 outputDiv.innerHTML = '<p>Місце виведення інформації</p>';
             }
-        
-        }
-        function goToLab1() {
-            window.location.href = "";
         }
 
         function showTopicDetails() {
             var outputDiv = document.getElementById("output");
             var topicDetails = `
-                <p><strong>Тема:</strong> СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ.<br>
-                РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.<br><br>
-                <strong>Мета:</strong> придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br>
-                Створити шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.<br><br>
-                <strong>Місце розташування:</strong> <a href="https://github.com/risewing/Domozhilkin_Lab1" target="_blank">посилання на репозиторій веб застосунка</a><br>
-                <a href="https://risewing.github.io/Domozhilkin_Lab1/" target="_blank">посилання на живу сторінку веб-застосунка</a><br>
-                <a href="https://github.com/risewing/Domozhilkin_Oleg_IndependentWork" target="_blank">посилання на репозиторій самостійної роботи</a><br>
-                <a href="https://risewing.github.io/Domozhilkin_Oleg_IndependentWork/" target="_blank">посилання на живу сторінку самостійної роботи</a>
+                <p><strong>Тема:</strong> СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ.<br> 
+
+                РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.<br><br> 
+
+                <strong>Мета:</strong> придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br> 
+
+                Створити шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.<br><br> 
+
+                <strong>Місце розташування:</strong> <a href="https://github.com/risewing/Domozhilkin_Lab1" target="_blank">посилання на репозиторій веб застосунка</a><br> 
+
+                <a href="https://risewing.github.io/Domozhilkin_Lab1/" target="_blank">посилання на живу сторінку веб-застосунка</a><br> 
+
+                <a href="https://github.com/risewing/Domozhilkin_Oleg_IndependentWork" target="_blank">посилання на репозиторій самостійної роботи</a><br> 
+
+                <a href="https://risewing.github.io/Domozhilkin_Oleg_IndependentWork/" target="_blank">посилання на живу сторінку самостійної роботи</a> 
             `;
             outputDiv.innerHTML = topicDetails;
         }
+
         function showTableCode() {
             var outputDiv = document.getElementById("output");
             var tableCode = `
-                <pre><code>&lt;table border="1"&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Місце&lt;/th&gt;
-        &lt;th&gt;Розташування&lt;/th&gt;
-        &lt;th&gt;Оцінка&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Онсен 1&lt;/td&gt;
-        &lt;td&gt;Осака&lt;/td&gt;
-        &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Онсен 2&lt;/td&gt;
-        &lt;td&gt;Токіо&lt;/td&gt;
-        &lt;td&gt;9&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+               <img src="./images/photo_1_2024-09-30_23-32-04.jpg" alt="Placeholder Image" width="300">
+               <img src="./images/photo_2_2024-09-30_23-32-04.jpg" alt="Placeholder Image" width="1000">
             `;
             outputDiv.innerHTML = tableCode;
         }
@@ -244,28 +314,113 @@
         function showListCode() {
             var outputDiv = document.getElementById("output");
             var listCode = `
-                <pre><code>&lt;ul&gt;
-    &lt;li&gt;Пункт 1&lt;/li&gt;
-    &lt;li&gt;Пункт 2&lt;/li&gt;
-    &lt;li&gt;Пункт 3&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+            <img src="./images/photo_1_2024-09-30_23-33-11.jpg" alt="Placeholder Image" width="300">
+               <img src="./images/photo_2_2024-09-30_23-33-11.jpg" alt="Placeholder Image" width="300">
             `;
             outputDiv.innerHTML = listCode;
         }
 
         function showImage() {
             var outputDiv = document.getElementById("output");
-            var imageCode = `
-                <pre><code>&lt;img src="image.jpg" alt="Опис зображення" width="500" height="300"&gt;</code></pre>
+            var imageHtml = `
+                <pre><code>&lt;img src="image.jpg" alt="Опис зображення" width="500" height="300"&gt;</code></pre> 
             `;
-            outputDiv.innerHTML = imageCode;
+            outputDiv.innerHTML = imageHtml;
         }
+
 
         function showConclusion() {
             var outputDiv = document.getElementById("output");
             var conclusion = `
-                <p>При виконанні цієї лабораторної роботи я придбав практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br>
-                Також створив шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.</p>
+                <p><strong>Висновок:</strong> Під час виконання ЛР №1 я набув практичних навичок зі створення структури HTML-документу та роботи з таблицями, списками, зображеннями.</p>
+            `;
+            outputDiv.innerHTML = conclusion;
+        }
+
+
+function showDetails() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+        <p><strong>Тема:</strong> КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</p>
+        <p><strong>Мета:</strong> придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішними та внутрішними відступами, плаваючими елементами, оформленням текстових елементів.</p>
+        <p><strong>Місце розташування:</strong></p>
+        <ul>
+            <li><a href="https://github.com/risewing/lab2">Посилання на репозиторій лабораторної роботи №2</a></li>
+            <li><a href="https://risewing.github.io/lab2/">Посилання на живу сторінку лабораторної роботи №2</a></li>
+            <li><a href="https://github.com/risewing/ind2">Посилання на репозиторій самостійної роботи №2</a></li>
+            <li><a href="https://risewing.github.io/ind2/">Посилання на живу сторінку самостійної роботи №2</a></li>
+            <li><a href="https://github.com/risewing/Domozhilkin_Zvit">Посилання на репозиторій звітного HTML документу</a></li>
+        </ul>
+    `;
+    
+}
+
+function showTagSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-30_23-43-33.jpg" alt="Placeholder Image" width="700">
+                <p>селектор тегу</p>
+            `;
+}
+
+
+function showClassSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-30_23-45-27.jpg" alt="Placeholder Image" width="300">
+                
+            `;
+}
+
+function showIDSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-30_23-46-30.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/photo_2024-09-30_23-46-51.jpg" alt="Placeholder Image" width="700">
+                <p>Cелектори ідентифікаторів.</p>
+            `;
+}
+function showOtherSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-30_23-48-12.jpg" alt="Placeholder Image" width="700">
+                <p> селектори нащадків.</p>
+
+
+                <img src="./images/photo_2024-09-30_23-49-28.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/photo_2024-09-30_23-49-51.jpg" alt="Placeholder Image" width="700">
+                <p> селектор групування.</p>
+            `;
+}
+
+function showCSS() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <p> шрифти.</p> 
+                <img src="./images/photo_2024-09-30_23-50-47.jpg" alt="шрифти" width="700">
+                
+                <p> контури.</p> 
+                <img src="./images/photo_2024-09-30_23-52-47.jpg" alt="Placeholder Image" width="700">
+
+                <p> фон.</p> 
+                <img src="./images/photo_2024-09-30_23-53-23.jpg" alt="Placeholder Image" width="700">
+                
+                <p> колір тексту.</p>
+                <img src="./images/photo_2024-09-30_23-53-52.jpg" alt="Placeholder Image" width="700">
+
+                <p> CSS-властивості для таблиць.</p>
+                <img src="./images/photo_2024-09-30_23-54-49.jpg" alt="Placeholder Image" width="700">
+
+                <p> CSS просунутий.</p>
+                <img src="./images/photo_2024-10-01_01-01-15.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/photo_2024-10-01_01-02-39.jpg" alt="Placeholder Image" width="700">
+               
+            `;
+}
+function showConclusion2() {
+            var outputDiv = document.getElementById("output");
+            var conclusion = `
+                <p><strong>Висновок:</strong> Під час виконання ЛР №2 я придбав практичні навички роботи  з селекторами, ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  зовнішними та внутрішними  відступами,  плаваючими елементами, оформленням текстових елементів</p>
             `;
             outputDiv.innerHTML = conclusion;
         }
