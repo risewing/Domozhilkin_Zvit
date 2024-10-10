@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс програмування</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 20px;
+        }
+
+        header img {
+            width: 150px;
+        }
+        header h1 {
+            text-align: center;
+            color: #f4f4f4;
+        }
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            margin-right: 500px;
+            margin-left: 500px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .icon {
+            color: white;
+            text-align: center;
+        }
+
+        .icon img {
+            width: 100px;
+        }
+
+        .section {
+            background-color: #ffffff; /* Темно-сірий фон */
+            padding: 50px 20px;
+            margin: 20px;
+            color: rgb(255, 255, 255);
+        }
+        .section-dark {
+            background-color: #252525; /* Темно-сірий фон тільки для першого блоку */
+        }
+        .section h2 {
+            color: rgb(197, 122, 8); /* Білий текст для заголовка */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-dark h2 {
+            color: white; /* Білий текст для заголовка */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section h3 {
+            color: #007bff; /* Синій текст для підзаголовка */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contentD {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+        .contentD img {
+            width: 200px;
+            margin-left: 20px; /* Фото жінки знизу */
+        }
+        .content img {
+            width: 200px;
+            margin-left: 20px; /* Фото жінки знизу */
+        }
+        .textD {
+            flex: 1;
+            text-align: right;
+        }
+        .text {
+            flex: 1;
+            text-align: right;
+        }
+
+        .text ul {
+            list-style: none;
+            margin-top: 20px;
+            color: rgb(0, 0, 0);
+        }
+
+        .text p {
+            list-style: none;
+            margin-top: 20px;
+            color: rgb(0, 0, 0);
+        }
+
+        
+
+        .text ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .text ul li::before {
+            content: '🟠';
+            margin-right: 10px;
+            color: green;
+        }
+        .textD ul {
+            list-style: none;
+            margin-top: 20px;
+            color: rgb(252, 143, 0);
+        }
+
+        .textD ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .textD ul li::before {
+            content: '✔️';
+            margin-right: 10px;
+            color: green;
+        }
+        .textD p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Дві колонки */
+            gap: 20px; /* Проміжки між колонками */
+            margin-top: 20px;
+        }
+
+        .benefits-grid div {
+            display: flex;
+            align-items: flex-start;
+            font-size: 16px;
+            flex: 0 0 30%;
+        }
+
+        .benefits-grid div::before {
+            content: '✅';
+            margin-right: 10px;
+            color: green;
+        }
+
+        .benefits-grid p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: white;
+            flex: 0 0 30%;
+        }
+
+        .footer {
+            background-color: #000;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+       <h1>ЩО ВИ ОПАНУЄТЕ?</h1>
+    </header>
+
+    <!-- Icons Section -->
+    <div class="icons">
+        <div class="icon">
+            <img src="./images/html.png" alt="HTML/CSS">
+            
+        </div>
+        <div class="icon">
+            <img src="./images/javascript.png" alt="JavaScript">
+            
+        </div>
+        <div class="icon">
+            <img src="./images/react.png" alt="React">
+            
+        </div>
+        <div class="icon">
+            <img src="./images/react2.png" alt="React">
+            
+        </div>
+        <div class="icon">
+            <img src="./images/typescript.png" alt="TypeScript">
+            
+        </div>
+        <div class="icon">
+            <img src="./images/angular.png" alt="Angular">
+            
+        </div>
+        <div class="icon">
+            <img src="./images/github.png" alt="GitHub">
+            
+        </div>
+        <div class="icon">
+            <img src="./images/github2.png" alt="GitHub">
+            
+        </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section section-dark">
+        <div class="contentD">
+            <div class="textD">
+                <h2>Ми гарантуємо нашим випускникам працевлаштування</h2> <!-- Білий текст -->
+                <h3>В не залежності від віку</h3> <!-- Синій текст -->
+                <div class="benefits-grid">
+                    <div>
+                        <p>НАВІТЬ У ЗРІЛОМУ ВІЦІ</p>
+                        <p>В Україні поширений міф про те, що тільки молоді люди можуть освоїти ІТ-напрямок. Але максимальний вік нашого студента доходить до 63 років.</p>
+                    </div>
+                    <div>
+                        <p>НАВІТЬ БЕЗ ЗНАННЯ АНГЛІЙСЬКОЇ</p>
+                        <p>Адже в нашому курсі вже включене вивчення англійської мови.</p>
+                    </div>
+                    <div>
+                        <p>НАВІТЬ БЕЗ ПРОФІЛЬНОЇ ОСВІТИ ТА НАВИЧОК</p>
+                        <p>70% наших випускників вже мають освіту, не пов`язану з програмуванням.</p>
+                    </div>
+                    <div>
+                        <p>НАВІТЬ БЕЗ ЗНАННЯ ПРОГРАМУВАННЯ</p>
+                        <p>Більшість наших студентів не знайомі з програмуванням та починають свій шлях з нуля.</p>
+                    </div>
+                </div>
+            </div>
+            <img src="./images/woman.png" alt="Woman"> <!-- Фото жінки -->
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+        <div class="content">
+            <div class="text">
+                <h2>Курс програмування Java з працевлаштуванням</h2>
+                <ul>
+                    <li>Стажування в ІТ-компанії</li>
+                    <p>Покажи себе на курсі, і ще до закінчення навчання ми відправимо тебе на стажування в IT компанію</p>
+                    <li>Три випускних проекти</li>
+                    <p>Наприкінці курсу ти будеш мати три проекти, з якими легко працевлаштуєшся</p>
+                    <li>Інтенсивність</li>
+                    <p>На відміну від інших, наші студенти вчаться 6 разів на тиждень впродовж всього терміну. Саме тому вони краще за випускників всіх інших шкіл та легко працевлаштовуються</p>
+                </ul>
+            </div>
+            <img src="./images/woman2.png" alt="Woman">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>2021 &copy; Усі права захищені</p>
+    </footer>
+
+</body>
+</html>
