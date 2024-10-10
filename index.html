@@ -97,7 +97,7 @@
         <div class="nav-buttons">
             <button onclick="showLab1()">Лабораторна робота №1</button>
             <button onclick="showLab2()">Лабораторна робота №2</button>
-            <button>Лабораторна робота №3</button>
+            <button onclick="showLab3()"> Лабораторна робота №3</button>
             <button>Лабораторна робота №4</button>
             <button>Лабораторна робота №5</button>
             <button>Лабораторна робота №6</button>
@@ -152,6 +152,24 @@
             `;
         }
 
+        // Показати меню для ЛР №3
+        function showLab3() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="showDetails3()">Тема, мета ЛР №3 Місце розташування сайту, звіту</button>
+                <button onclick = "Task1()">Завдання №1 Зовнішній вигляд макету, код макету </button>
+                <button>ЗАВДАННЯ №2</button>
+                <button onclick="showFixedTable()">Фіксована таблична верстка</button>
+                <button onclick="showGumTable()">Гумова таблична верстка</button>
+                <button onclick = "showFixedBlock()">Фіксована блокова верстка</button>
+                <button onclick = "showGumBlock()">Гумова блокова верстка</button>
+                <button>ЗАВДАННЯ №3</button>
+                <button onclick = "showScreenFlexbox()">Cкріншот сторінки (Flexbox)</button>
+                <button onclick = "shoHTMLCodeFlexbox()">Html-код (Flexbox)</button>
+                <button onclick = "showCSSCodeFlexbox()">CSS-код (Flexbox)</button>
+                <button onclick = "showConclusion3()">ВИСНОВКИ до ЛР №3</button>
+            `;
+        }
         function toggleDescription() {
             var outputDiv = document.getElementById("output");
             var currentContent = outputDiv.innerHTML.trim();
@@ -424,6 +442,56 @@ function showConclusion2() {
             `;
             outputDiv.innerHTML = conclusion;
         }
-    </script>
+        function showDetails3() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+        <p><strong>Тема:</strong> ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА.  ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX </p>
+        <p><strong>Мета:</strong> ⎯  придбати практичні навички роботи  верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок ⎯  придбати практичні навички роботи  верстки сторінок засобами CSS та FLEXBOX</p>
+        <p><strong>Місце розташування:</strong></p>
+        <ul>
+            <li><a href="https://github.com/risewing/lab2">Посилання на репозиторій лабораторної роботи №3</a></li>
+            <li><a href="https://risewing.github.io/lab2/">Посилання на живу сторінку лабораторної роботи №3</a></li>
+            
+            <li><a href="https://github.com/risewing/Domozhilkin_Zvit">Посилання на репозиторій звітного HTML документу</a></li>
+        </ul>
+    `;
+}
+function Task1() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/mainpage.png" alt="Placeholder Image" width="700">
+                <img src="./images/Снимок экрана 2024-10-10 161811.png" alt="Placeholder Image" width="700">
+            `;
+}
+
+function showFixedTable() {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+        <a href="file:///C:/C++/Git/Domozhilkin_Zvit/lab3task2/fixedTable.html">фіксована таблична верстка</a>
+                `
+            ;
+        }
+        function showGumTable() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+            <a href="file:///C:/C++/Git/Domozhilkin_Zvit/lab3task2/gumTable.html">гумова таблична верстка</a>
+                    `
+                ;
+            }
+    function showFixedBlock() {
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = `
+                <a href="file:///C:/C++/Git/Domozhilkin_Zvit/lab3task2/fixedBlock.html">фіксована блокова верстка</a>
+                        `
+                    ;
+                }
+    function showGumBlock() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+            <a href="file:///C:/C++/Git/Domozhilkin_Zvit/lab3task2/gumBlock.html">гумова блокова верстка</a>
+                    `
+                ;
+            }
+</script>
 </body>
 </html>
