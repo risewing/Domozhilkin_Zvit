@@ -13,275 +13,149 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         header {
-            background-color: #000000;
+            background-color: #1c1c1c;
             padding: 20px;
+            text-align: center;
         }
 
-        header img {
-            width: 150px;
-        }
         header h1 {
-            text-align: center;
-            color: #f4f4f4;
+            color: white;
         }
-        .icons {
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        .skill-icon {
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .skill-icon img {
+            width: 60px;
+        }
+
+        .guarantees {
+            background-color: #f0f0f0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .guarantees h2 {
+            color: #00a541;
+            margin-bottom: 20px;
+        }
+
+        .guarantees-list {
             display: flex;
             justify-content: space-around;
-            margin-right: 500px;
-            margin-left: 500px;
-            background-color: #f4f4f4;
+        }
+
+        .guarantee-item {
+            width: 200px;
+            background-color: white;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .icon {
-            color: white;
+        .guarantee-item img {
+            width: 50px;
+        }
+
+        .java-course {
+            padding: 40px;
             text-align: center;
         }
 
-        .icon img {
-            width: 100px;
+        .java-course h2 {
+            color: #0073e6;
         }
 
-        .section {
-            background-color: #ffffff; /* Темно-сірий фон */
-            padding: 50px 20px;
-            margin: 20px;
-            color: rgb(255, 255, 255);
-        }
-        .section-dark {
-            background-color: #252525; /* Темно-сірий фон тільки для першого блоку */
-        }
-        .section h2 {
-            color: rgb(197, 122, 8); /* Білий текст для заголовка */
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .section-dark h2 {
-            color: white; /* Білий текст для заголовка */
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .section h3 {
-            color: #007bff; /* Синій текст для підзаголовка */
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .contentD {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row-reverse;
-        }
-
-        .content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row-reverse;
-        }
-        .contentD img {
-            width: 200px;
-            margin-left: 20px; /* Фото жінки знизу */
-        }
-        .content img {
-            width: 200px;
-            margin-left: 20px; /* Фото жінки знизу */
-        }
-        .textD {
-            flex: 1;
-            text-align: right;
-        }
-        .text {
-            flex: 1;
-            text-align: right;
-        }
-
-        .text ul {
-            list-style: none;
+        .course-details {
             margin-top: 20px;
-            color: rgb(0, 0, 0);
-        }
-
-        .text p {
-            list-style: none;
-            margin-top: 20px;
-            color: rgb(0, 0, 0);
-        }
-
-        
-
-        .text ul li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .text ul li::before {
-            content: '🟠';
-            margin-right: 10px;
-            color: green;
-        }
-        .textD ul {
-            list-style: none;
-            margin-top: 20px;
-            color: rgb(252, 143, 0);
-        }
-
-        .textD ul li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .textD ul li::before {
-            content: '✔️';
-            margin-right: 10px;
-            color: green;
-        }
-        .textD p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            color: rgb(255, 255, 255);
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Дві колонки */
-            gap: 20px; /* Проміжки між колонками */
-            margin-top: 20px;
-        }
-
-        .benefits-grid div {
-            display: flex;
-            align-items: flex-start;
-            font-size: 16px;
-            flex: 0 0 30%;
-        }
-
-        .benefits-grid div::before {
-            content: '✅';
-            margin-right: 10px;
-            color: green;
-        }
-
-        .benefits-grid p {
-            margin-bottom: 0;
-            font-size: 14px;
-            color: white;
-            flex: 0 0 30%;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .footer {
-            background-color: #000;
-            padding: 20px;
+            background-color: #222;
             color: white;
             text-align: center;
+            padding: 10px;
         }
 
-       
     </style>
 </head>
 <body>
-
-    <!-- Header Section -->
     <header>
-       <h1>ЩО ВИ ОПАНУЄТЕ?</h1>
+        <h1>Що ви опануєте?</h1>
+        <div class="skills">
+            <div class="skill-icon">
+                <img src="html-css.png" alt="HTML/CSS">
+            </div>
+            <div class="skill-icon">
+                <img src="javascript.png" alt="JavaScript">
+            </div>
+            <div class="skill-icon">
+                <img src="react.png" alt="React">
+            </div>
+            <div class="skill-icon">
+                <img src="angular.png" alt="Angular">
+            </div>
+            <div class="skill-icon">
+                <img src="typescript.png" alt="TypeScript">
+            </div>
+            <div class="skill-icon">
+                <img src="github.png" alt="GitHub">
+            </div>
+        </div>
     </header>
 
-    <!-- Icons Section -->
-    <div class="icons">
-        <div class="icon">
-            <img src="./images/html.png" alt="HTML/CSS">
-            
-        </div>
-        <div class="icon">
-            <img src="./images/javascript.png" alt="JavaScript">
-            
-        </div>
-        <div class="icon">
-            <img src="./images/react.png" alt="React">
-            
-        </div>
-        <div class="icon">
-            <img src="./images/react2.png" alt="React">
-            
-        </div>
-        <div class="icon">
-            <img src="./images/typescript.png" alt="TypeScript">
-            
-        </div>
-        <div class="icon">
-            <img src="./images/angular.png" alt="Angular">
-            
-        </div>
-        <div class="icon">
-            <img src="./images/github.png" alt="GitHub">
-            
-        </div>
-        <div class="icon">
-            <img src="./images/github2.png" alt="GitHub">
-            
-        </div>
-    </div>
-
-    <!-- Section 1 -->
-    <div class="section section-dark">
-        <div class="contentD">
-            <div class="textD">
-                <h2>Ми гарантуємо нашим випускникам працевлаштування</h2> <!-- Білий текст -->
-                <h3>В не залежності від віку</h3> <!-- Синій текст -->
-                <div class="benefits-grid">
-                    <div>
-                        <p>НАВІТЬ У ЗРІЛОМУ ВІЦІ</p>
-                        <p>В Україні поширений міф про те, що тільки молоді люди можуть освоїти ІТ-напрямок. Але максимальний вік нашого студента доходить до 63 років.</p>
-                    </div>
-                    <div>
-                        <p>НАВІТЬ БЕЗ ЗНАННЯ АНГЛІЙСЬКОЇ</p>
-                        <p>Адже в нашому курсі вже включене вивчення англійської мови.</p>
-                    </div>
-                    <div>
-                        <p>НАВІТЬ БЕЗ ПРОФІЛЬНОЇ ОСВІТИ ТА НАВИЧОК</p>
-                        <p>70% наших випускників вже мають освіту, не пов`язану з програмуванням.</p>
-                    </div>
-                    <div>
-                        <p>НАВІТЬ БЕЗ ЗНАННЯ ПРОГРАМУВАННЯ</p>
-                        <p>Більшість наших студентів не знайомі з програмуванням та починають свій шлях з нуля.</p>
-                    </div>
-                </div>
+    <section class="guarantees">
+        <h2>Ми гарантуємо працевлаштування</h2>
+        <div class="guarantees-list">
+            <div class="guarantee-item">
+                <img src="age.png" alt="Вік">
+                <p>Навіть у зрілому віці! Вік наших студентів доходить до 63 років.</p>
             </div>
-            <img src="./images/woman.png" alt="Woman"> <!-- Фото жінки -->
-        </div>
-    </div>
-
-    <!-- Section 2 -->
-    <div class="section">
-        <div class="content">
-            <div class="text">
-                <h2>Курс програмування Java з працевлаштуванням</h2>
-                <ul>
-                    <li>Стажування в ІТ-компанії</li>
-                    <p>Покажи себе на курсі, і ще до закінчення навчання ми відправимо тебе на стажування в IT компанію</p>
-                    <li>Три випускних проекти</li>
-                    <p>Наприкінці курсу ти будеш мати три проекти, з якими легко працевлаштуєшся</p>
-                    <li>Інтенсивність</li>
-                    <p>На відміну від інших, наші студенти вчаться 6 разів на тиждень впродовж всього терміну. Саме тому вони краще за випускників всіх інших шкіл та легко працевлаштовуються</p>
-                </ul>
+            <div class="guarantee-item">
+                <img src="education.png" alt="Освіта">
+                <p>Навіть без профільної освіти та навичок.</p>
             </div>
-            <img src="./images/woman2.png" alt="Woman">
+            <div class="guarantee-item">
+                <img src="english.png" alt="Англійська">
+                <p>Навіть без знання англійської мови.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer Section -->
+    <section class="java-course">
+        <h2>Курс програмування: Java з працевлаштуванням</h2>
+        <div class="course-details">
+            <h3>Стажування в IT-компанії</h3>
+            <p>Покажи себе на курсі і до закінчення навчання ми відправимо тебе на стажування.</p>
+
+            <h3>Три випускних проекти</h3>
+            <p>Ти будеш мати три реальних проекти для працевлаштування.</p>
+
+            <h3>Інтенсивність</h3>
+            <p>Навчання 6 разів на тиждень протягом короткого терміну.</p>
+        </div>
+    </section>
+
     <footer class="footer">
-        <p>2021 &copy; Усі права захищені</p>
+        <p>© 2021</p>
     </footer>
-
 </body>
 </html>
