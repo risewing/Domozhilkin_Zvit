@@ -99,7 +99,7 @@
             <button onclick="showLab2()">Лабораторна робота №2</button>
             <button onclick="showLab3()"> Лабораторна робота №3</button>
             <button onclick="showLab4()">Лабораторна робота №4</button>
-            <button>Лабораторна робота №5</button>
+            <button onclick="showLab5()">Лабораторна робота №5</button>
             <button>Лабораторна робота №6</button>
             <button>Лабораторна робота №7</button>
             <button>Лабораторна робота №8</button>
@@ -179,6 +179,19 @@
                 <button onclick = "TabletScreen()">Скріншот Планшетної версії </button>
                 <button onclick = "MobileScreen()">Скріншот Мобільної версії </button>
                 <button onclick = "showConclusion4()">ВИСНОВКИ до ЛР №4</button>
+            `;
+        }
+
+        function showLab5() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="showDetails5()">Тема, мета ЛР №5 Місце розташування сайту, звіту</button>
+                <button onclick = "Task1()">Завдання 1 </button>
+                <button onclick = "Task2()">Завдання 2 </button>
+                <button onclick = "Task3()">Завдання 3 </button>
+                <button onclick = "Task4()">Завдання 4 </button>
+                <button onclick = "Task5()">Завдання 5 </button>
+                <button onclick = "showConclusion5()">ВИСНОВКИ до ЛР №5</button>
             `;
         }
 
@@ -633,6 +646,77 @@ function DesktopScreen() {
 
 
                     `
+                ;
+                outputDiv.innerHTML = conclusion;
+            }
+
+            function showDetails5() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+<p><strong>Тема:</strong> ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ. 
+ВИКОРИСТАННЯ МАСИВІВ У JS-СЦЕНАРІЯХ. РЕАЛІЗАЦІЯ ПРОГРАМ ЗАСОВАМИ МОВИ JAVASCRIPT</p>
+<p><strong>Мета:</strong> ⎯  придбати практичні навички роботи з конструкціями мови JS, масивами та фугкціями у js-сценаріях.  Реалізація програм засовами мови JAVASCRIPT</p>
+<p><strong>Місце розташування:</strong></p>
+<ul>
+    <li>Посилання на репозиторій власного WEB-застосунку: 
+        <a href="https://github.com/risewing/lab2">https://github.com/risewing/lab2</a>
+    </li>
+    <li>Посилання на живу сторінку власного WEB-застосунку: 
+        <a href="https://risewing.github.io/lab2/">https://risewing.github.io/lab2/</a>
+    </li>
+    <li>Посилання на репозиторій звітного HTML документу: 
+        <a href="https://github.com/risewing/Domozhilkin_Zvit">https://github.com/risewing/Domozhilkin_Zvit</a>
+    </li>
+    <li>Посилання на живу сторінку звітного HTML документу: 
+        <a href="https://risewing.github.io/Domozhilkin_Zvit/">https://risewing.github.io/Domozhilkin_Zvit/</a>
+    </li>
+</ul>`
+;}
+
+function Task1() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+            <img src="./images/task1.png" alt="Placeholder Image" width="700">
+            <img src="./images/photo1.png" alt="Placeholder Image" width="700">`
+
+        ;
+    }
+function Task2() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+            <img src="./images/task2.png" alt="Placeholder Image" width="700">
+            <img src="./images/photo2.png" alt="Placeholder Image" width="700">`
+            
+        ;
+    }
+    function Task3() {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+                <img src="./images/task3.png" alt="Placeholder Image" width="700">
+                <img src="./images/photo3.png" alt="Placeholder Image" width="700">`
+                
+            ;
+        }
+        function Task4() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                    <img src="./images/task4.1.png" alt="Placeholder Image" width="700">
+                    <img src="./images/task4.2.png" alt="Placeholder Image" width="700">
+                    <img src="./images/photo4.png" alt="Placeholder Image" width="700">`
+                ;
+            }
+            function Task5() {
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = `
+                        <img src="./images/task5.png" alt="Placeholder Image" width="700">
+                    
+                        <img src="./images/photo5.png" alt="Placeholder Image" width="700">`
+                    ;
+                }
+            function showConclusion5() {
+                var outputDiv = document.getElementById("output");
+                var conclusion = `
+                    <p><strong>Висновок:</strong> Під час виконання ЛР №5 я придбав практичні навички роботи з конструкціями мови JS, масивами та функціями у js-сценаріях. Також реалізував програми засовами мови JAVASCRIPT</p>`
                 ;
                 outputDiv.innerHTML = conclusion;
             }
