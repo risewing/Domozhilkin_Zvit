@@ -100,7 +100,7 @@
             <button onclick="showLab3()"> Лабораторна робота №3</button>
             <button onclick="showLab4()">Лабораторна робота №4</button>
             <button onclick="showLab5()">Лабораторна робота №5</button>
-            <button>Лабораторна робота №6</button>
+            <button onclick="showLab6()">Лабораторна робота №6</button>
             <button>Лабораторна робота №7</button>
             <button>Лабораторна робота №8</button>
             <button>Лабораторна робота №9</button>
@@ -192,6 +192,20 @@
                 <button onclick = "Task4()">Завдання 4 </button>
                 <button onclick = "Task5()">Завдання 5 </button>
                 <button onclick = "showConclusion5()">ВИСНОВКИ до ЛР №5</button>
+            `;
+        }
+
+        function showLab6() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="showDetails6()">Тема, мета ЛР №6 Місце розташування сайту, звіту</button>
+                <button onclick = "Taask1()">Завдання 1 </button>
+                <button onclick = "Taask3()">Завдання 3 </button>
+                <button onclick = "Taask5()">Завдання 5 </button>
+                <button onclick = "Taask7()">Завдання 7 </button>
+                <button onclick = "Taask9()">Завдання 9 </button>
+                <button onclick = "Taask10()">Завдання 10 </button>
+                <button onclick = "showConclusion6()">ВИСНОВКИ до ЛР №6</button>
             `;
         }
 
@@ -717,6 +731,85 @@ function Task2() {
                 var outputDiv = document.getElementById("output");
                 var conclusion = `
                     <p><strong>Висновок:</strong> Під час виконання ЛР №5 я придбав практичні навички роботи з конструкціями мови JS, масивами та функціями у js-сценаріях. Також реалізував програми засовами мови JAVASCRIPT</p>`
+                ;
+                outputDiv.innerHTML = conclusion;
+            }
+
+            function showDetails6() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+<p><strong>Тема:</strong> ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ.</p>
+<p><strong>Мета:</strong> придбати практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки.
+.  Реалізація програм засовами мови JAVASCRIPT</p>
+<p><strong>Місце розташування:</strong></p>
+<ul>
+    <li>Посилання на репозиторій власного WEB-застосунку: 
+        <a href="https://github.com/risewing/lab2">https://github.com/risewing/lab2</a>
+    </li>
+    <li>Посилання на живу сторінку власного WEB-застосунку: 
+        <a href="https://risewing.github.io/lab2/">https://risewing.github.io/lab2/</a>
+    </li>
+    <li>Посилання на репозиторій звітного HTML документу: 
+        <a href="https://github.com/risewing/Domozhilkin_Zvit">https://github.com/risewing/Domozhilkin_Zvit</a>
+    </li>
+    <li>Посилання на живу сторінку звітного HTML документу: 
+        <a href="https://risewing.github.io/Domozhilkin_Zvit/">https://risewing.github.io/Domozhilkin_Zvit/</a>
+    </li>
+</ul>`
+;}
+
+function Taask1() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+            <img src="./images/taask1.png" alt="Placeholder Image" width="700">
+            <img src="./images/phooto1.png" alt="Placeholder Image" width="700">`
+
+        ;
+    }
+function Taask3() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+            <img src="./images/taask3.png" alt="Placeholder Image" width="700">
+            <img src="./images/taask33.png" alt="Placeholder Image" width="700">`
+            
+        ;
+    }
+    function Taask5() {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+                <img src="./images/taask5.png" alt="Placeholder Image" width="700">
+                <img src="./images/taask55.png" alt="Placeholder Image" width="700">`
+                
+            ;
+        }
+        function Taask7() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                    <img src="./images/taask7.png" alt="Placeholder Image" width="700">
+                    <img src="./images/taask7.1.png" alt="Placeholder Image" width="700">
+                    <img src="./images/task77.png" alt="Placeholder Image" width="700">`
+                ;
+            }
+            function Taask9() {
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = `
+                        <img src="./images/taask9.jpg" alt="Placeholder Image" width="700">
+                    
+                        <img src="./images/taask99.jpg" alt="Placeholder Image" width="700">`
+                    ;
+                }
+                function Taask10() {
+                    var outputDiv = document.getElementById("output");
+                    outputDiv.innerHTML = `
+                            <img src="./images/taask10.jpg" alt="Placeholder Image" width="700">
+                        
+                            <img src="./images/task10.jpg" alt="Placeholder Image" width="700">`
+                        ;
+                    }
+            function showConclusion6() {
+                var outputDiv = document.getElementById("output");
+                var conclusion = `
+                    <p><strong>Висновок:</strong> Під час виконання ЛР №6 я придбав практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки.  Реалізація програм засовами мови JAVASCRIPT</p>`
                 ;
                 outputDiv.innerHTML = conclusion;
             }
