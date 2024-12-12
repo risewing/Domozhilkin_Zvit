@@ -101,7 +101,7 @@
             <button onclick="showLab4()">Лабораторна робота №4</button>
             <button onclick="showLab5()">Лабораторна робота №5</button>
             <button onclick="showLab6()">Лабораторна робота №6</button>
-            <button>Лабораторна робота №7</button>
+            <button onclick="showLab7()">Лабораторна робота №7</button>
             <button>Лабораторна робота №8</button>
             <button>Лабораторна робота №9</button>
         </div>
@@ -206,6 +206,21 @@
                 <button onclick = "Taask9()">Завдання 9 </button>
                 <button onclick = "Taask10()">Завдання 10 </button>
                 <button onclick = "showConclusion6()">ВИСНОВКИ до ЛР №6</button>
+            `;
+        }
+
+        function showLab7() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="showDetails7()">Тема, мета ЛР №7 Місце розташування сайту, звіту</button>
+                <button onclick = "Task7_1()">Завдання 1 </button>
+                <button onclick = "Task7_3()">Завдання 3 </button>
+                <button onclick = "Task7_5()">Завдання 5 </button>
+                <button onclick = "Task7_7()">Завдання 7 </button>
+                <button onclick = "Task7_8()">Завдання 8 </button>
+                <button onclick = "Task7_9()">Завдання 9 </button>
+                <button onclick = "Task7_10()">Завдання 10 </button>
+                <button onclick = "showConclusion7()">ВИСНОВКИ до ЛР №7</button>
             `;
         }
 
@@ -814,6 +829,93 @@ function Taask3() {
                 outputDiv.innerHTML = conclusion;
             }
 
+            function showDetails7() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+<p><strong>Тема:</strong> КЛАСИ. ОБ'ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ'ЄКТ ПОДІЇ. ДЕЛЕГУВАННЯ ПОДІЙ. </p>
+<p><strong>Мета:</strong> придбати практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки.
+.  Реалізація програм засовами мови JAVASCRIPT</p>
+<p><strong>Місце розташування:</strong></p>
+<ul>
+    <li>Посилання на репозиторій власного WEB-застосунку: 
+        <a href="https://github.com/risewing/lab2">https://github.com/risewing/lab2</a>
+    </li>
+    <li>Посилання на живу сторінку власного WEB-застосунку: 
+        <a href="https://risewing.github.io/lab2/">https://risewing.github.io/lab2/</a>
+    </li>
+    <li>Посилання на репозиторій звітного HTML документу: 
+        <a href="https://github.com/risewing/Domozhilkin_Zvit">https://github.com/risewing/Domozhilkin_Zvit</a>
+    </li>
+    <li>Посилання на живу сторінку звітного HTML документу: 
+        <a href="https://risewing.github.io/Domozhilkin_Zvit/">https://risewing.github.io/Domozhilkin_Zvit/</a>
+    </li>
+</ul>`
+;}
+
+function Task7_1() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+            <img src="./lab7.tasks/images7/task1.jpg" alt="Placeholder Image" width="700">
+            <img src="./lab7.tasks/images7/taask1.jpg" alt="Placeholder Image" width="700">`
+
+        ;
+    }
+function Task7_3() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+            <img src="./lab7.tasks/images7/task3.jpg" alt="Placeholder Image" width="700">
+            <img src="./lab7.tasks/images7/task33.jpg" alt="Placeholder Image" width="700">
+            <img src="./lab7.tasks/images7/taask3.jpg" alt="Placeholder Image" width="700">`
+        ;
+    }
+    function Task7_5() {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+                <img src="./lab7.tasks/images7/task5.jpg" alt="Placeholder Image" width="700">
+                <img src="./lab7.tasks/images7/taask5.jpg" alt="Placeholder Image" width="700">`
+                
+            ;
+        }
+        function Task7_7() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                    <img src="./lab7.tasks/images7/task7.jpg" alt="Placeholder Image" width="700">
+                    <img src="./lab7.tasks/images7/taask7.jpg" alt="Placeholder Image" width="700">
+                   `
+                ;
+            }
+        function Task7_8() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                    <img src="./lab7.tasks/images7/task8.jpg" alt="Placeholder Image" width="700">
+                    <img src="./lab7.tasks/images7/taask8.jpg" alt="Placeholder Image" width="700">`
+                ;
+            }
+            function Task7_9() {
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = `
+                        <img src="./lab7.tasks/images7/task9.jpg" alt="Placeholder Image" width="700">
+                    
+                        <img src="./lab7.tasks/images7/taask9.jpg" alt="Placeholder Image" width="700">`
+                    ;
+                }
+                function Task7_10() {
+                    var outputDiv = document.getElementById("output");
+                    outputDiv.innerHTML = `
+                            <img src="./lab7.tasks/images7/task10.jpg" alt="Placeholder Image" width="700">
+                        
+                            <img src="./lab7.tasks/images7/taask10.jpg" alt="Placeholder Image" width="700">`
+                        ;
+                    }
+            function showConclusion7() {
+                var outputDiv = document.getElementById("output");
+                var conclusion = `
+                <p><strong>Висновок:</strong> Під час виконання ЛР №7 я придбав практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки.
+.  Реалізація програм засобами мови JAVASCRIPT
+</p>`
+                ;
+                outputDiv.innerHTML = conclusion;
+            }
 </script>
 </body>
 </html>
